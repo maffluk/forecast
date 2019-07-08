@@ -48,7 +48,6 @@
   flex-direction: column;
 }
 input {
-  width: calc(100% - 1,3em);
   background: #fff;
   color: #525865;
   border: 1px solid #d1d1d1;
@@ -74,7 +73,7 @@ input:focus {
   box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 .citisesSearch{
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 76px;
   width: calc(30% - 4px);
