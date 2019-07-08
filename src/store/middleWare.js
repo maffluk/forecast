@@ -16,7 +16,7 @@ const middleWare = store => next => action => {
             .catch(error => console.log(error))
     }
     if(action.type === 'SEARCH'){
-        fetch(`http://api.apixu.com/v1/search.json?key=de88fa7cbc1a4b56a10113046190407&q=${action.val}`)
+        fetch(`https://api.apixu.com/v1/search.json?key=de88fa7cbc1a4b56a10113046190407&q=${action.val}`)
             .then(response => {
                 return response.json()
             })
