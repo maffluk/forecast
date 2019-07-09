@@ -20,7 +20,10 @@ const middleWare = store => next => action => {
                     return next(action)
                 }
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                action.type = 'ERROR'
+                return next(action)
+            })
     }
     if(action.type === 'SEARCH'){
         getResource(`https://api.apixu.com/v1/search.json?key=de88fa7cbc1a4b56a10113046190407&q=${action.val}`)
@@ -28,7 +31,10 @@ const middleWare = store => next => action => {
                 action.citises = response
                 return next(action)
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                action.type = 'ERROR'
+                return next(action)
+            })
     }
     if(action.type === 'CLEAR_SEARCH') return next(action)
 }
