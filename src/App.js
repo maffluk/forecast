@@ -10,10 +10,19 @@ class App extends Component {
     this.props.dispatch({ type: 'GET_FORECAST', val: 'Lviv' })
   }
   render() {
+    let Loading = (
+      <div className='forecastCard'>
+            <div className='cardHeader'>
+              <div className="lds-css ng-scope">
+              <div className="lds-spinner" style={{width:"100%", height:"100%"}}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+              </div>
+            </div>
+        </div>
+    )
     return (
       <div className="App">
         <Search />
-        {this.props.forecast === '' ? 'Loading' : <ForecastCart forecast={this.props.forecast}/>}
+        {this.props.forecast === '' ? Loading : <ForecastCart forecast={this.props.forecast}/>}
       </div>
     )
   }
